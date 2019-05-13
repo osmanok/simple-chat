@@ -65,5 +65,8 @@ mongoose.connect(dbUrl ,{useMongoClient : true} ,(err) => {
   console.log('mongodb connected',err);
 })
 
-const PORT = process.env.PORT || 3000;
-app.listen(PORT);
+
+
+var server = http.listen(process.env.PORT || 3000, () => {
+  console.log('server is running on port', server.address().port);
+});
